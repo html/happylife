@@ -32,7 +32,7 @@ class ItemsControllerTest < ActionController::TestCase
     should "redirect when model is valid" do
       Items.any_instance.stubs(:valid?).returns(true)
       post :create
-      assert_redirected_to items_url(assigns(:items))
+      assert_redirected_to item_url(assigns(:items))
     end
   end
   
@@ -53,7 +53,7 @@ class ItemsControllerTest < ActionController::TestCase
     should "redirect when model is valid" do
       Items.any_instance.stubs(:valid?).returns(true)
       put :update, :id => Items.first
-      assert_redirected_to items_url(assigns(:items))
+      assert_redirected_to item_url(assigns(:items))
     end
   end
   

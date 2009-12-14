@@ -4,12 +4,12 @@
   %tr
     %th Title
     %th Content
-  - for items in @items
+  - for item in @items
     %tr
-      %td= h items.title
-      %td= h items.content
-      %td= link_to 'Show', items
-      %td= link_to 'Edit', edit_items_path(items)
-      %td= link_to 'Destroy', items, :confirm => 'Are you sure?', :method => :delete
+      %td= h item.title
+      %td= h item.content
+      %td= link_to 'Show', item
+      %td= link_to 'Edit', edit_item_path(item)
+      %td= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete
 
-%p= link_to "New Items", new_item_path
+%p= link_to "New Item", new_item_path
