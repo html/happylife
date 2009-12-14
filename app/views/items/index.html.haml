@@ -1,0 +1,15 @@
+- title "Items"
+
+%table
+  %tr
+    %th Title
+    %th Content
+  - for items in @items
+    %tr
+      %td= h items.title
+      %td= h items.content
+      %td= link_to 'Show', items
+      %td= link_to 'Edit', edit_items_path(items)
+      %td= link_to 'Destroy', items, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Items", new_item_path

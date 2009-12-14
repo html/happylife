@@ -1,0 +1,15 @@
+- title "Items"
+
+%p
+  %strong Title:
+  =h @items.title
+%p
+  %strong Content:
+  =h @items.content
+
+%p
+  = link_to "Edit", edit_items_path(@items)
+  |
+  = link_to "Destroy", @items, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", items_path
