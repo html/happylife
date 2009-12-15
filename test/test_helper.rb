@@ -35,4 +35,8 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def login_as(user)
+    user.has_role! :admin
+    @request.session[:user_id] = session[:user_id] = user.id
+  end
 end

@@ -1,4 +1,9 @@
 class ItemsController < ApplicationController
+  access_control do 
+    allow :admin
+    allow all, :to => [:show, :index]
+  end
+
   def index
     @items = Items.all
   end
